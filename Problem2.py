@@ -45,8 +45,18 @@ SSR = np.sum((y_hat - y_mean) ** 2)
 SSE = np.sum((y - y_hat) ** 2)
 
 # Calculate Mean Squares
+print(f'(X.shape[1] - 1: {X.shape[1] - 1}')
+print(f'(X.shape[0] - X.shape[1]: {X.shape[0] - X.shape[1]}')
+
 MSR = SSR / (X.shape[1] - 1)  
 MSE = SSE / (X.shape[0] - X.shape[1])  
+
+# Calculate F statistic
+F = MSR / MSE
+
+# Calculate R squared
+R_squared = (SSR / SST) * 100
+
 
 # Output the Sum of Squares and Mean Squares
 print('SSR (Sum of Squares due to Regression):', SSR)
@@ -54,3 +64,7 @@ print('SSE (Sum of Squares of Errors):', SSE)
 print('SST (Total Sum of Squares):', SST)
 print('MSR (Mean Square due to Regression):', MSR)
 print('MSE (Mean Square Error):', MSE)
+
+# Output F statistic and R squared
+print('F statistic:', F)
+print('R squared as a percentage:', R_squared)
